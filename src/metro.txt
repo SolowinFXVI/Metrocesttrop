@@ -3,7 +3,7 @@
 #          E num_sommet1 num_sommet1 temps_en_secondes
 V 0000 Abbesses
 V 0001 Alexandre Dumas 2
-V 0002 Alma Marceau
+V 0002 Alma Marceau 9
 V 0003 Alésia 4
 V 0004 Anatole France 3
 V 0005 Anvers 2
@@ -26,7 +26,7 @@ V 0021 Belleville 11
 V 0022 Bercy 6
 V 0023 Bercy 14
 V 0024 Bibliothèque François Mitterand
-V 0025 Billancourt
+V 0025 Billancourt 9
 V 0026 Bir-Hakeim 6
 V 0027 Blanche 2
 V 0028 Bobigny, Pablo Picasso 5 T
@@ -34,7 +34,7 @@ V 0029 Bobigny-Pantin, Raymond Queneau 5
 V 0030 Boissière 6
 V 0031 Bolivar 7bis
 V 0032 Bonne Nouvelle 8
-V 0033 Bonne Nouvelle
+V 0033 Bonne Nouvelle 9
 V 0034 Botzaris 7bis
 V 0035 Boucicaut 8
 V 0036 Boulogne, Jean Jaurès
@@ -43,7 +43,7 @@ V 0038 Bourse 3
 V 0039 Brochant
 V 0040 Bréguet-Sabin 5
 V 0041 Buttes Chaumont 7bis
-V 0042 Buzenval
+V 0042 Buzenval 9
 V 0043 Bérault 1
 V 0044 Cadet 7
 V 0045 Cambronne 6
@@ -59,7 +59,7 @@ V 0054 Charles Michels
 V 0055 Charles de Gaulle, Étoile 1
 V 0056 Charles de Gaulle, Étoile 2
 V 0057 Charles de Gaulle, Étoile 6 T
-V 0058 Charonne
+V 0058 Charonne 9
 V 0059 Chaussée d'Antin, La Fayette 7
 V 0060 Chaussée d'Antin, La Fayette 9
 V 0061 Chemin Vert 8
@@ -89,7 +89,7 @@ V 0084 Cour Saint-Émilion
 V 0085 Courcelles 2
 V 0086 Couronnes 2
 V 0087 Crimée 7
-V 0088 Croix de Chavaux
+V 0088 Croix de Chavaux 9
 V 0089 Créteil-Préfecture 8 T
 V 0090 Créteil-Université 8
 V 0091 Créteil-l'Echat, Hôpital Henri Mondor 8
@@ -105,7 +105,7 @@ V 0100 Duroc
 V 0101 Edgar Quinet 6
 V 0102 Esplanade de la Défense 1
 V 0103 Europe 3
-V 0104 Exelmans
+V 0104 Exelmans 9
 V 0105 Faidherbe-Chaligny 8
 V 0106 Falguière
 V 0107 Filles du Calvaire 8
@@ -140,9 +140,9 @@ V 0135 Hôtel de Ville 1
 V 0136 Hôtel de Ville 11
 V 0137 Invalides 8
 V 0138 Invalides 13
-V 0139 Iéna
+V 0139 Iéna 9
 V 0140 Jacques Bonsergent 5
-V 0141 Jasmin
+V 0141 Jasmin 9
 V 0142 Jaurès 2
 V 0143 Jaurès 5
 V 0144 Jaurès 7bis
@@ -158,7 +158,7 @@ V 0153 La Fourche
 V 0154 La Motte Picquet, Grenelle 6
 V 0155 La Motte Picquet, Grenelle 8
 V 0156 La Motte Picquet, Grenelle 10
-V 0157 La Muette
+V 0157 La Muette 9
 V 0158 La Tour-Maubourg 8
 V 0159 Lamarck Caulaincourt
 V 0160 Laumière 5
@@ -182,7 +182,7 @@ V 0177 Madeleine 14
 V 0178 Mairie d'Issy
 V 0179 Mairie d'Ivry 7 T
 V 0180 Mairie de Clichy
-V 0181 Mairie de Montreuil
+V 0181 Mairie de Montreuil 9 T
 V 0182 Mairie de Saint-Ouen
 V 0183 Mairie des Lilas
 V 0184 Maison Blanche 7
@@ -191,20 +191,20 @@ V 0186 Maisons-Alfort, Stade 8
 V 0187 Malakoff-Plateau de Vanves
 V 0188 Malakoff-Rue Étienne Dolet
 V 0189 Malesherbes 3
-V 0190 Maraîchers
+V 0190 Maraîchers 9
 V 0191 Marcadet Poissonniers 4
 V 0192 Marcadet Poissonniers 12
-V 0193 Marcel Sembat
+V 0193 Marcel Sembat 9
 V 0194 Marx Dormoy
 V 0195 Maubert Mutualité
-V 0196 Michel Ange Auteuil
-V 0197 Michel Ange Auteuil
-V 0198 Michel Ange Molitor
-V 0199 Michel Ange Molitor
+V 0196 Michel Ange Auteuil 9
+V 0197 Michel Ange Auteuil 10
+V 0198 Michel Ange Molitor 9
+V 0199 Michel Ange Molitor 10
 V 0200 Michel Bizot 8
 V 0201 Mirabeau
-V 0202 Miromesnil
-V 0203 Miromesnil
+V 0202 Miromesnil 9
+V 0203 Miromesnil 13
 V 0204 Monceau 2
 V 0205 Montgallet 8
 V 0206 Montparnasse Bienvenue 4
@@ -254,7 +254,7 @@ V 0249 Plaisance
 V 0250 Poissonnière 7
 V 0251 Pont de Levallois, Bécon 3 T
 V 0252 Pont de Neuilly 1
-V 0253 Pont de Sèvres
+V 0253 Pont de Sèvres 9 T
 V 0254 Pont-Marie 7
 V 0255 Pont-Neuf 7
 V 0256 Porte Dauphine 2 T
@@ -270,9 +270,9 @@ V 0265 Porte de Charenton 8
 V 0266 Porte de Choisy 7
 V 0267 Porte de Clichy
 V 0268 Porte de Clignancourt 4 T
-V 0269 Porte de Montreuil
+V 0269 Porte de Montreuil 9
 V 0270 Porte de Pantin 5
-V 0271 Porte de Saint-Cloud
+V 0271 Porte de Saint-Cloud 9
 V 0272 Porte de Saint-Ouen
 V 0273 Porte de Vanves
 V 0274 Porte de Versailles
@@ -292,7 +292,7 @@ V 0287 Quai de la Gare 6
 V 0288 Quai de la Rapée 5
 V 0289 Quatre Septembre 3
 V 0290 Rambuteau
-V 0291 Ranelagh
+V 0291 Ranelagh 9
 V 0292 Raspail 4
 V 0293 Raspail 6
 V 0294 Rennes
@@ -302,13 +302,13 @@ V 0297 Richard Lenoir 5
 V 0298 Richelieu Drouot 8
 V 0299 Richelieu Drouot 9
 V 0300 Riquet 7
-V 0301 Robespierre
+V 0301 Robespierre 9
 V 0302 Rome 2
 V 0303 Rue Montmartre, Grands Boulevards  8
-V 0304 Rue Montmartre, Grands Boulevards
+V 0304 Rue Montmartre, Grands Boulevards 9
 V 0305 Rue Saint-Maur 3
-V 0306 Rue de la Pompe
-V 0307 Rue des Boulets
+V 0306 Rue de la Pompe 9
+V 0307 Rue des Boulets 9
 V 0308 Rue du Bac
 V 0309 Réaumur Sébastopol 3
 V 0310 Réaumur Sébastopol 4
@@ -317,8 +317,8 @@ V 0312 République 5
 V 0313 République 8
 V 0314 République 9
 V 0315 République 11
-V 0316 Saint-Ambroise
-V 0317 Saint-Augustin
+V 0316 Saint-Ambroise 9
+V 0317 Saint-Augustin 9
 V 0318 Saint-Denis-Porte de Paris
 V 0319 Saint-Denis-Université
 V 0320 Saint-Fargeau
@@ -333,7 +333,7 @@ V 0328 Saint-Mandé, Tourelle 1
 V 0329 Saint-Marcel 5
 V 0330 Saint-Michel 4
 V 0331 Saint-Paul, Le Marais 1
-V 0332 Saint-Philippe du Roule
+V 0332 Saint-Philippe du Roule 9
 V 0333 Saint-Placide 4
 V 0334 Saint-Sulpice 4
 V 0335 Saint-Sébastien-Froissart 8
@@ -370,7 +370,7 @@ V 0365 Villejuif, P. Vaillant Couturier 7
 V 0366 Villiers 2
 V 0367 Villiers 3
 V 0368 Volontaires
-V 0369 Voltaire
+V 0369 Voltaire 9
 V 0370 Wagram 3
 V 0371 École Militaire 8
 V 0372 École Vétérinaire de Maisons-Alfort 8
