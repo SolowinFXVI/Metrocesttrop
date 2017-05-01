@@ -4,6 +4,6 @@
 #include "constantes.h"
 #include "structures.h"
 
-STATIONS initialiser_sommets_et_arcs(char *str, STATIONS M);
+void initialiser_sommets_et_arcs(char *str);
 
 #endif

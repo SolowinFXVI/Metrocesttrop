@@ -1,4 +1,4 @@
-CFLAGS=-c	-g	-std=c99	-Wall
+CFLAGS=-c	-g	-Wall
 
 all:	mct
 	./mct

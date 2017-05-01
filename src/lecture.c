@@ -3,13 +3,13 @@
 #include <string.h>
 #include "lecture.h"
 
-STATIONS initialiser_sommets_et_arcs(char *str, STATIONS M){
+void initialiser_sommets_et_arcs(char *str){ //bug!!!!!!!!!!!!!!!
   int i;
-  char type;
-  int index;
-  char nom[200];
-  char ligne[5];
-  char status;
+  char type[256];
+  char index[256];
+  char nom[256];
+  char ligne[256];
+  char status[256];
   FILE* fic = fopen(str, "r");
 
   if (fic == NULL) {
@@ -17,15 +17,18 @@ STATIONS initialiser_sommets_et_arcs(char *str, STATIONS M){
 		exit(EXIT_FAILURE);
 	}
 
-for(i = 0; i <= NBR_STATIONS; i++ ){
-    fscanf(fic,"%s %d  %s  %s  %s", &type, &index, &nom[200], &ligne[5], &status);
-    M.S[i].index=index;
-    M.S[i].nom=nom;
-    M.S[i].ligne=ligne;
-    M.S[i].status=status;
+for(i = 0; i<NBR_STATIONS; i++ ){
+    fscanf(fic,"%s %s %s %s %s", type, index, nom, ligne, status);
+    STATION[i].index=index;
+    STATION[i].nom=nom;
+    STATION[i].ligne=ligne;
+    STATION[i].status=status;
+    printf("type = %s\n",type);
+    printf("index = %s\n",STATION[i].index);
+    printf("nom = %s\n",STATION[i].nom);
+    printf("ligne = %s\n",STATION[i].ligne);
+    printf("status = %s\n",STATION[i].status);
   }
 
-
 fclose(fic);
-return M;
 }

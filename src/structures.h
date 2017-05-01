@@ -1,16 +1,14 @@
 #ifndef __MCT_H
 #define  __MCT_H
 
-typedef struct sommet{
-  int index;
+struct sommet{ //la structure
+  char *index;
   char *nom;
   char *ligne;
-  char status;
-}SOMMET;
+  char *status;
+};
 
-typedef struct stations{
-  SOMMET S[318];
-}STATIONS;
+struct sommet STATION[378]; //crée un tableau de la structure
 
 typedef struct arc{
   int index1;
