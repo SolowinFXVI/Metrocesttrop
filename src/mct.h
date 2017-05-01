@@ -1,20 +1,13 @@
 #ifndef __MCT_H
 #define  __MCT_H
 
-struct sommet{
-  int index;
-  char* nom;
-  int ligne;
-};
+#include "constantes.h"
+#include "structures.h"
+#include "lecture.h"
+//STAT initialiser_sommets_et_arcs(char *str);
 
-typedef struct sommmet SOMMET;
+void calcul_trajet();
 
-struct arc{
-  int index1;
-  int index2;
-  int temps;
-};
-
-typedef struct arc ARC;
+void afficher_trajet();
 
 #endif

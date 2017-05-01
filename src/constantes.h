@@ -1,0 +1,3 @@
+#define NBR_STATIONS 317
+#define TAILLE_NOM 200
+#define TAILLE_LIGNE 5
