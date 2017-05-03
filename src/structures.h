@@ -7,20 +7,30 @@ struct sommet{
   char ligne[128];
   char status[128];
 };
-
 typedef struct sommet SOMMET;
 
 struct tab{
-  struct sommet TAB[378];
+  struct sommet TAB[377];
 };
-
 typedef struct tab TAB;
 
-typedef struct arc{
-  int index1;
-  int index2;
-  int temps;
-}ARC;
+struct arc{
+  struct sommet sm1;
+  struct sommet sm2;
+  char temps[128];
+};
+typedef struct arc ARC;
+
+struct arcs{
+  struct arc ARCS[472];
+};
+typedef struct arcs ARCS;
+
+struct graph{
+
+
+};
+typedef struct graph GRAPH;
 
 
 #endif

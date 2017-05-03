@@ -3,7 +3,12 @@
 
 #include "constantes.h"
 #include "structures.h"
-TAB init(TAB M);
-TAB initialiser_sommets_et_arcs(char *str, TAB M);
+
+TAB init_s(TAB M);
+TAB initialiser_sommets(char *str, TAB M);
 TAB cleanup(TAB M);
+
+ARCS initialiser_arcs(char *str, ARCS A,TAB M);
+ARCS init_a(ARCS A);
+
 #endif
