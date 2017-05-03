@@ -3,13 +3,27 @@
 #include <string.h>
 #include "lecture.h"
 
-void initialiser_sommets_et_arcs(char *str){ //bug!!!!!!!!!!!!!!!
+TAB init(TAB M){
   int i;
-  char type[256];
-  char index[256];
-  char nom[256];
-  char ligne[256];
-  char status[256];
+  for(i=0; i<NBR_STATIONS-1; i++){
+    strcpy(M.TAB[i].index,"UNKNOWN");
+    strcpy(M.TAB[i].nom,"UNKNOWN");
+    strcpy(M.TAB[i].ligne,"UNKNOWN");
+    strcpy(M.TAB[i].status,"UNKNOWN");
+  }
+
+
+    strcpy(M.TAB[15].nom,"baboo");
+    return M;
+}
+
+TAB initialiser_sommets_et_arcs(char *str, TAB M){ //bug!!!!!!!!!!!!!!!
+  int i=0;
+  char type[128];
+  char index[128];
+  char nom[128];
+  char ligne[128];
+  char status[128];
   FILE* fic = fopen(str, "r");
 
   if (fic == NULL) {
@@ -17,18 +31,14 @@ void initialiser_sommets_et_arcs(char *str){ //bug!!!!!!!!!!!!!!!
 		exit(EXIT_FAILURE);
 	}
 
-for(i = 0; i<NBR_STATIONS; i++ ){
-    fscanf(fic,"%s %s %s %s %s", type, index, nom, ligne, status);
-    STATION[i].index=index;
-    STATION[i].nom=nom;
-    STATION[i].ligne=ligne;
-    STATION[i].status=status;
-    printf("type = %s\n",type);
-    printf("index = %s\n",STATION[i].index);
-    printf("nom = %s\n",STATION[i].nom);
-    printf("ligne = %s\n",STATION[i].ligne);
-    printf("status = %s\n",STATION[i].status);
+  for(i=0;i<NBR_STATIONS;i++){
+    fscanf(fic,"%s %s %s %s %s\n", &type[0], &index[0], &nom[0], &ligne[0], &status[0]);
+    strcpy(M.TAB[i].index,index);
+    strcpy(M.TAB[i].nom,nom);
+    strcpy(M.TAB[i].ligne,ligne);
+    strcpy(M.TAB[i].status,status);
   }
 
 fclose(fic);
+return M;
 }
