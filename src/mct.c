@@ -19,6 +19,5 @@ int main(int argc, char *argv[]) {
   M=initialise_sommets("metro.txt",M);
   A=initialise_arcs("metro.txt",A,M);
 
-
   return 0;
 }

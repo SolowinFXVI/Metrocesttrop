@@ -26,11 +26,7 @@ struct arcs{
 };
 typedef struct arcs ARCS;
 
-struct graph{
-
-
-};
-typedef struct graph GRAPH;
+ARC G[377][377]; //Matrice d'adjascence
 
 
 #endif
