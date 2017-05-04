@@ -1,4 +1,4 @@
-CFLAGS=-c	-g	-Wall
+CFLAGS=-c	-g	-O2	-Wall
 
 all:	mct
 	./mct
@@ -11,7 +11,7 @@ test:	mct.o	lecture.o	dijkstra.o
 	make	mct.o
 	make	lecture.o
 	make	dijkstra.o
-	gcc	-o	tes	mct.o	lecture.o	dijkstra.o
+	gcc	-o	-O2	tes	mct.o	lecture.o	dijkstra.o
 	./tes
 
 mct:
