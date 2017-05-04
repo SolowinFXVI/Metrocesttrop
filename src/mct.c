@@ -18,6 +18,7 @@ int main(int argc, char *argv[]) {
   ARCS A;
   M=initialise_sommets("metro.txt",M);
   A=initialise_arcs("metro.txt",A,M);
-
+  initialiser_graph(G);
+  printf("showme: %s %s %s\n", G[34][31].sm1.nom,G[34][31].sm2.nom,G[34][31].temps);
   return 0;
 }

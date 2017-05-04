@@ -11,4 +11,7 @@ TAB cleanup(TAB M);
 ARCS initialiser_arcs(char *str, ARCS A,TAB M);
 ARCS init_a(ARCS A);
 
+void initialiser_graph(ARC G[NBR_ARCS][NBR_ARCS]);
+void init_g(ARC G[NBR_ARCS][NBR_ARCS]);
+
 #endif

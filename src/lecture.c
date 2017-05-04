@@ -30,6 +30,25 @@ ARCS init_a(ARCS A){//remplie le tableau des arcs d'un marqueur "UNKNOWN"
   return A;
 }
 
+void init_g(ARC G[NBR_ARCS][NBR_ARCS]){
+  int i;
+  int j;
+  for(i=0;i<NBR_ARCS;i++){
+    for(j=0;j<NBR_ARCS;j++){
+      strcpy(G[i][j].sm1.index,"UNKNOWN");
+      strcpy(G[i][j].sm1.nom,"UNKNOWN");
+      strcpy(G[i][j].sm1.ligne,"UNKNOWN");
+      strcpy(G[i][j].sm1.status,"UNKNOWN");
+      strcpy(G[i][j].sm2.index,"UNKNOWN");
+      strcpy(G[i][j].sm2.nom,"UNKNOWN");
+      strcpy(G[i][j].sm2.ligne,"UNKNOWN");
+      strcpy(G[i][j].sm2.status,"UNKNOWN");
+      strcpy(G[i][j].temps,"99999");
+
+    }
+  }
+}
+
 TAB initialiser_sommets(char *str, TAB M){ //extrait les données de "metro.txt" et les stock dans le tableau des sommets
   int i;
   char type[128];
@@ -111,4 +130,8 @@ ARCS initialiser_arcs(char *str, ARCS A, TAB M){ //extrait les données de "metr
   }
 fclose(fic);
 return A;
+}
+
+void initialiser_graph(ARC G[NBR_ARCS][NBR_ARCS]){
+  init_g(G);
 }

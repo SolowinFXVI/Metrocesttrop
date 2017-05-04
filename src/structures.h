@@ -26,7 +26,14 @@ struct arcs{
 };
 typedef struct arcs ARCS;
 
-ARC G[377][377]; //Matrice d'adjascence
+ARC G[472][472]; //Matrice d'adjascence
 
+struct element{
+  int val;
+  struct element* next;
+};
+
+typedef struct element Element;
+typedef Element* List;
 
 #endif
