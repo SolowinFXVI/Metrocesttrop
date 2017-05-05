@@ -110,3 +110,4 @@ void initialise_graph(char *str,ARC G[NBR_ARCS][NBR_ARCS],TAB M){ //fonction d'i
   init_g(G);
   initialiser_graph(str,G,M);
 }
+//DEMONTIS BOUZIANE JACQUET

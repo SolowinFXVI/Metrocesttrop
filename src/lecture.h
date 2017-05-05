@@ -12,3 +12,4 @@ void initialise_graph(char *str, ARC G[NBR_ARCS][NBR_ARCS], TAB M);
 void init_g(ARC G[NBR_ARCS][NBR_ARCS]);
 
 #endif
+//DEMONTIS BOUZIANE JACQUET
