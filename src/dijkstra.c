@@ -43,22 +43,18 @@ int conversion_temps_sec(int temps_total){
 
 
 int sommets_tous_traites(int sommets_traites[NBR_STATIONS]){
-  printf("sommets_tous_traites \n");
   int i;
-  for(i=0; i<NBR_STATIONS; i++){
-    if(sommets_traites[i]==0){
+  for(i=0; i<NBR_STATIONS; i++)
+    if(sommets_traites[i]==0)
       return 0;
-    }
-  }
   return 1;
 }
 
-void init_pere(int pere[NBR_STATIONS]){
+void init_pere(int pere[NBR_ARCS]){
   printf("init_pere \n");
   int i;
-  for(i=0; i<NBR_STATIONS; i++){
+  for(i=0; i<NBR_STATIONS; i++)
     pere[i]=-1;
-  }
 }
 
 
@@ -74,7 +70,7 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
   int i;
 
   for(i=0; i < NBR_STATIONS; i++){
-    if(strcmp(G[sommet_depart][i].temps,"99999")!= 0){
+    if(atoi(G[sommet_depart][i].temps) != 99999){
       plus_courte_distance[i]=atoi(G[sommet_depart][i].temps);
       pere[i]= sommet_depart;
     }
@@ -86,13 +82,15 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
   plus_courte_distance[sommet_depart] = 0;
 
   while(!sommets_tous_traites(sommets_traites)){
+    printf("tours de while\n");
+    //recherche du prochain sommet
     int min = 99999, a_traiter;
 
-    for(i=0; i<NBR_STATIONS; i++){
+    for(i=0; i<NBR_STATIONS; i++){//pour toutes les stations
 
       if(sommets_traites[i] == 0){
         if(plus_courte_distance[i] <= min){
-          a_traiter = 1;
+          a_traiter = i;
           min=plus_courte_distance[i];
         }
       }
@@ -101,7 +99,7 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
     sommets_traites[a_traiter] = 1;
 
     for(i=0; i<NBR_STATIONS;i++){
-      if(strcmp(G[a_traiter][i].temps,"99999") != 0){
+      if(atoi(G[a_traiter][i].temps) != 99999){
         if(plus_courte_distance[i] >= plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps)){
           plus_courte_distance[i] = plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps);
           pere[i] = a_traiter;

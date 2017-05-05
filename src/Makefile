@@ -1,4 +1,4 @@
-CFLAGS=-c	-g	-O2	-Wall
+CFLAGS=-c	-g	-Wall
 
 all:	mct
 	./mct
@@ -11,13 +11,10 @@ test:	mct.o	lecture.o	dijkstra.o
 	make	mct.o
 	make	lecture.o
 	make	dijkstra.o
-	gcc	-o	-O2	tes	mct.o	lecture.o	dijkstra.o
-	./tes
+	gcc	-o	tes	mct.o	lecture.o	dijkstra.o
+	./tes	Arts_et_Métiers	Galliéni
 
-mct:
-	gcc	-o	mct	mct.o	affichage.o	lecture.o -luvsqgraphics `sdl-config --libs` -lm -lSDL_ttf
-
-mct.o:	mct.c	mct.h	constantes.h	lecture.h	affichage.h structures.h dijkstra.c dijkstra.h
+mct.o:	mct.c	mct.h	constantes.h	lecture.h	structures.h dijkstra.c dijkstra.h
 	gcc $(CFLAGS) mct.c
 
 lecture.o:	mct.c	mct.h	constantes.h	lecture.h structures.h dijkstra.c dijkstra.h
@@ -29,6 +26,5 @@ dijkstra.o:	mct.c mct.h constantes.h lecture.h structures.h dijkstra.c dijkstra.
 clean:
 	rm	-f	mct
 	rm	-f	mct.o
-	rm	-f	affichage.o
 	rm	-f	lecture.o
 	rm	-f	dijkstra.o

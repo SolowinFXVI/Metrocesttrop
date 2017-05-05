@@ -30,8 +30,8 @@ int conversion_sommet_str_sommet_int(TAB M, char *sommet_str){
   }
   if(sommet == -1){
     printf("sommet inconnu ou mal orthographié\n");
-    printf("ex1: Basilique de Saint-Denis -> Basilique_de_Saint-Denis");
-    printf("ex2: Place d'Italie -> Place_d'Italie");
+    printf("ex1: Basilique de Saint-Denis -> Basilique_de_Saint-Denis\n");
+    printf("ex2: Place d'Italie -> Place_d'Italie\n");
     exit(EXIT_FAILURE);
   }
   return sommet;
