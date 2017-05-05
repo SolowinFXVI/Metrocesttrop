@@ -5,8 +5,8 @@ V 3 Alésia 4 N
 V 4 Anatole_France 3 N
 V 5 Anvers 2 N
 V 6 Argentine 1 N
-V 7 Arts_et_Métiers 3 N
-V 8 Arts_et_Métiers 11 N
+V 7 Arts_et_Métiers 11 N
+V 8 Arts_et_Métiers 3 N
 V 9 Assemblée_Nationale 12 N
 V 10 Aubervilliers-Pantin,_Quatre_Chemins 7 N
 V 11 Avenue_Émile_Zola 10 N
@@ -309,11 +309,11 @@ V 307 Rue_des_Boulets 9 N
 V 308 Rue_du_Bac 12 N
 V 309 Réaumur_Sébastopol 3 N
 V 310 Réaumur_Sébastopol 4 N
-V 311 République 3 N
-V 312 République 5 N
+V 311 République 11 N
+V 312 République 3 N
 V 313 République 8 N
 V 314 République 9 N
-V 315 République 11 N
+V 315 République 5 N
 V 316 Saint-Ambroise 9 N
 V 317 Saint-Augustin 9 N
 V 318 Saint-Denis-Porte_de_Paris 13 N

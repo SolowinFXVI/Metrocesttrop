@@ -21,11 +21,6 @@ struct arc{
 };
 typedef struct arc ARC;
 
-struct arcs{
-  struct arc ARCS[472];
-};
-typedef struct arcs ARCS;
-
 ARC G[472][472]; //Matrice d'adjascence
 
 struct element{

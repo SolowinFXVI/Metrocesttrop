@@ -11,12 +11,6 @@ TAB initialise_sommets(char *str, TAB M){
   return initialiser_sommets(str, M);
 }
 
-ARCS initialise_arcs(char *str,ARCS A, TAB M){
-  printf("initialise_arcs\n");
-  A=init_a(A);
-  return initialiser_arcs(str,A,M);
-}
-
 int conversion_sommet_str_sommet_int(TAB M, char *sommet_str){
   printf("conversion_sommet_str_sommet_int\n");
   int sommet=-1;
@@ -40,7 +34,6 @@ int conversion_sommet_str_sommet_int(TAB M, char *sommet_str){
 ////////////////////////////////////////////////////////////////////////////////
 int main(int argc, char *argv[]) {
   TAB M;
-  ARCS A;
   char *sommet_depart_str;
   char *sommet_arrivee_str;
 
@@ -65,13 +58,11 @@ int main(int argc, char *argv[]) {
 
   M=initialise_sommets("metro.txt",M);
   printf("sommets M initialisés\n");
-  A=initialise_arcs("metro.txt",A,M);
-  printf("arcs A initilisés\n");
   initialise_graph("metro.txt",G,M);
   printf("graph initialisé\n");
   plus_court_chemin(G,M,conversion_sommet_str_sommet_int(M,sommet_depart_str),conversion_sommet_str_sommet_int(M,sommet_arrivee_str));
   printf("fin algorithme\n");
-  //printf("showme: %s %s %s\n", G[0][238].sm1.nom,G[0][238].sm2.nom,G[0][238].temps);
+  printf("showme: %s %s %s\n", G[238][0].sm1.nom,G[238][0].sm2.nom,G[238][0].temps);
   return 0;
 }
 ////////////////////////////////////////////////////////////////////////////////

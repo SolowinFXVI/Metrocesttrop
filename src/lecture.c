@@ -14,22 +14,6 @@ TAB init_s(TAB M){ //remplie le tableau des sommet d'un marqueur "UNKNOWN"
   return M;
 }
 
-ARCS init_a(ARCS A){//remplie le tableau des arcs d'un marqueur "UNKNOWN"
-  int i;
-  for(i=0; i<472; i++){
-    strcpy(A.ARCS[i].sm1.index,"UNKNOWN");
-    strcpy(A.ARCS[i].sm1.nom,"UNKNOWN");
-    strcpy(A.ARCS[i].sm1.ligne,"UNKNOWN");
-    strcpy(A.ARCS[i].sm1.status,"UNKNOWN");
-    strcpy(A.ARCS[i].sm2.index,"UNKNOWN");
-    strcpy(A.ARCS[i].sm2.nom,"UNKNOWN");
-    strcpy(A.ARCS[i].sm2.ligne,"UNKNOWN");
-    strcpy(A.ARCS[i].sm2.status,"UNKNOWN");
-    strcpy(A.ARCS[i].temps,"99999");
-  }
-  return A;
-}
-
 void init_g(ARC G[NBR_ARCS][NBR_ARCS]){
   int i;
   int j;
@@ -75,63 +59,6 @@ fclose(fic);
 return M;
 }
 
-ARCS associer_index_data_sm1(int j, char *sm,ARCS A, TAB M){ //associe l'index d'un sommet au reste de ces données
-  int i;
-  for(i=0;i<NBR_STATIONS;i++){
-    if(strcmp(sm,M.TAB[i].index)==0){
-      strcpy(A.ARCS[j].sm1.index, M.TAB[i].index);
-      strcpy(A.ARCS[j].sm1.nom, M.TAB[i].nom);
-      strcpy(A.ARCS[j].sm1.ligne, M.TAB[i].ligne);
-      strcpy(A.ARCS[j].sm1.status, M.TAB[i].status);
-    return A;
-    }
-  }
-  return A;
-}
-
-ARCS associer_index_data_sm2(int j,char *sm,ARCS A, TAB M){ //associe l'index d'un sommet au reste de ces données
-  int i;
-  for(i=0;i<NBR_STATIONS;i++){
-    if(strcmp(sm,M.TAB[i].index)==0){
-      strcpy(A.ARCS[j].sm2.index, M.TAB[i].index);
-      strcpy(A.ARCS[j].sm2.nom, M.TAB[i].nom);
-      strcpy(A.ARCS[j].sm2.ligne, M.TAB[i].ligne);
-      strcpy(A.ARCS[j].sm2.status, M.TAB[i].status);
-    return A;
-    }
-  }
-  return A;
-}
-
-ARCS initialiser_arcs(char *str, ARCS A, TAB M){ //extrait les données de "metro.txt" et les stock dans le tableau des arcs
-  int i=0;
-  int j=0;
-  char type[128];
-  char sm1[128];
-  char sm2[128];
-  char temps[128];
-  char garbage[128];
-  FILE* fic = fopen(str, "r");
-
-  if (fic == NULL) {
-		printf("echec ouverture fichier%s\n", str);
-		exit(EXIT_FAILURE);
-	}
-
-  while(fscanf(fic,"%s %s %s %s %s\n", &type[0], &sm1[0], &sm2[0], &temps[0], &garbage[0]) != EOF){
-      if(i>=376){ //ignore toute la partie sur les sommets
-        A=associer_index_data_sm1(j,&sm1[0],A,M);
-        A=associer_index_data_sm2(j,&sm2[0],A,M);
-        strcpy(A.ARCS[j].temps,temps);
-        j++;
-        i++;
-      }
-    i++;
-  }
-fclose(fic);
-return A;
-}
-
 void associer_graph_data(char *sm1, char *sm2,ARC G[NBR_ARCS][NBR_ARCS],TAB M){
   int i;
   for(i=0;i<NBR_STATIONS;i++){
@@ -167,8 +94,9 @@ void initialiser_graph(char *str,ARC G[NBR_ARCS][NBR_ARCS], TAB M){ //extrait le
   while(fscanf(fic,"%s %s %s %s %s\n", &type[0], &sm1[0], &sm2[0], &temps[0], &garbage[0]) != EOF){
       if(i>=376){ //ignore toute la partie sur les sommets
         associer_graph_data(sm1,sm2,G,M);
-        associer_graph_data(sm1,sm2,G,M);
+        associer_graph_data(sm2,sm1,G,M);
         strcpy(G[atoi(sm1)][atoi(sm2)].temps,temps);
+        strcpy(G[atoi(sm2)][atoi(sm1)].temps,temps);
         i++;
       }
     i++;

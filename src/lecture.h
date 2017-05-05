@@ -8,9 +8,6 @@ TAB init_s(TAB M);
 TAB initialiser_sommets(char *str, TAB M);
 TAB cleanup(TAB M);
 
-ARCS initialiser_arcs(char *str, ARCS A,TAB M);
-ARCS init_a(ARCS A);
-
 void initialise_graph(char *str, ARC G[NBR_ARCS][NBR_ARCS], TAB M);
 void init_g(ARC G[NBR_ARCS][NBR_ARCS]);
 

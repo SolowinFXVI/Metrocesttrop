@@ -4,7 +4,7 @@
 #include "structures.h"
 #include "string.h"
 
-List fill_start(List l, int a){
+List fill_start(List l, int a){ //implementation classique d'une liste
   printf("fill_start\n");
   Element* new= malloc(sizeof(Element));
   new->val = a;
@@ -13,28 +13,24 @@ List fill_start(List l, int a){
   return l;
 }
 
-void print_list_path(List l, TAB M,ARC G[NBR_ARCS][NBR_ARCS],char *temps_total){
-  printf("print_list_path \n");
+void print_list_path(List l, TAB M,ARC G[NBR_ARCS][NBR_ARCS],int temps_total){//affiche la liste
   if(l==NULL || l->next == NULL){
     printf("liste vide\n");
-    exit(013);
+    return ;
   }
-
-
     while(l->next != NULL){
-      printf("en partant de %s allez jusqu'a %s par la ligne %s\n",M.TAB[l->val].nom, M.TAB[l->next->val].nom, G[l->val][l->next->val].sm2.ligne);
+      printf("De  %s  allez jusqu'a  %s ligne %s\n",M.TAB[l->val].nom, M.TAB[l->next->val].nom, G[l->val][l->next->val].sm2.ligne);
+      l=l->next;
     }
 }
 
-int conversion_temps_min(int temps_total){
-  printf(" conversion_temps_min\n");
+int conversion_temps_min(int temps_total){ //simple conversion du temps en minutes
   int minutes;
   minutes=temps_total/60;
   return minutes;
 }
 
-int conversion_temps_sec(int temps_total){
-  printf(" conversion_temps_sec\n");
+int conversion_temps_sec(int temps_total){//va de paire avec la fonction conversion_temps_min et renvoie les secondes restantes
   int secondes;
   secondes=temps_total%60;
   return secondes;
@@ -42,40 +38,42 @@ int conversion_temps_sec(int temps_total){
 
 
 
-int sommets_tous_traites(int sommets_traites[NBR_STATIONS]){
+int sommets_tous_traites(int sommets_traites[NBR_STATIONS]){//test si le tableau ne contient que des 1 -> retourne 1
   int i;
-  for(i=0; i<NBR_STATIONS; i++)
-    if(sommets_traites[i]==0)
+  for(i=0; i<NBR_STATIONS; i++){
+    if(sommets_traites[i]==0){
       return 0;
+    }
+  }
   return 1;
 }
 
-void init_pere(int pere[NBR_ARCS]){
+void init_pere(int pere[NBR_ARCS]){//initialise le tableau pere a -1
   printf("init_pere \n");
   int i;
-  for(i=0; i<NBR_STATIONS; i++)
+  for(i=0; i<NBR_STATIONS; i++){
     pere[i]=-1;
+  }
 }
 
 
-void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
+void dijkstra(int pere[NBR_STATIONS], int sommet_depart){//Transforme le tabelau pere en tableau des plus courts chemins
   printf("dijkstra \n");
+
   int sommets_traites[NBR_STATIONS]={0};
-
   int plus_courte_distance[NBR_STATIONS];
-  init_pere(pere);
-
   sommets_traites[sommet_depart] = 1;
-
   int i;
 
-  for(i=0; i < NBR_STATIONS; i++){
-    if(atoi(G[sommet_depart][i].temps) != 99999){
-      plus_courte_distance[i]=atoi(G[sommet_depart][i].temps);
+  init_pere(pere);
+
+  for(i=0; i < NBR_STATIONS; i++){ //initialisation du tableau plus courte distance
+    if(atoi(G[sommet_depart][i].temps) != INFINI){//si i successeur du sommet de depart
+      plus_courte_distance[i]=atoi(G[sommet_depart][i].temps);//alors plus courte distance vaut le poids de l'arc
       pere[i]= sommet_depart;
     }
-    else{
-      plus_courte_distance[i]=99999;
+    else{ //sinon plus courte distance vaut l'infini
+      plus_courte_distance[i]=INFINI;
     }
   }
 
@@ -84,7 +82,7 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
   while(!sommets_tous_traites(sommets_traites)){
     printf("tours de while\n");
     //recherche du prochain sommet
-    int min = 99999, a_traiter;
+    int min = INFINI, a_traiter;
 
     for(i=0; i<NBR_STATIONS; i++){//pour toutes les stations
 
@@ -99,7 +97,7 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){
     sommets_traites[a_traiter] = 1;
 
     for(i=0; i<NBR_STATIONS;i++){
-      if(atoi(G[a_traiter][i].temps) != 99999){
+      if(atoi(G[a_traiter][i].temps) != INFINI){
         if(plus_courte_distance[i] >= plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps)){
           plus_courte_distance[i] = plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps);
           pere[i] = a_traiter;
@@ -113,7 +111,7 @@ void plus_court_chemin(ARC G[NBR_ARCS][NBR_ARCS],TAB M, int sommet_depart, int s
   printf(" plus_court_chemin\n");
   if(sommet_depart == sommet_arrivee){
     printf("Vous etes deja arrivé...");
-    exit(1337);
+    return ;
   }
 
   int pere[NBR_ARCS];
@@ -130,12 +128,15 @@ void plus_court_chemin(ARC G[NBR_ARCS][NBR_ARCS],TAB M, int sommet_depart, int s
     depart = pere[arrivee];
     if(depart == -1){
       printf("Pas de chemin possible entre %s et %s\n",M.TAB[sommet_depart].nom, M.TAB[sommet_arrivee].nom);
-      exit(94);
+      return ;
     }
     temps_total += atoi(G[depart][arrivee].temps);
     path=fill_start(path,depart);
     arrivee=depart;
   }while(depart != sommet_depart);
-  printf("temps de trajet %d minutes et %d secondes\n",conversion_temps_min(temps_total),conversion_temps_sec(temps_total));
-
+  printf("\n");
+  print_list_path(path,M,G,temps_total);
+  printf("\n");
+  printf("temps de trajet : %d minutes et %d secondes\n",conversion_temps_min(temps_total),conversion_temps_sec(temps_total));
+  printf("\n");
 }
