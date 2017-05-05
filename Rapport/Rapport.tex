@@ -21,31 +21,44 @@
   \pagenumbering{arabic}
 
 \paragraph{Note :}
-La methode utilisée pour écrire le code ne permet pas d'afficher les accents et les lignes trop longues sont coupées, cependant l'intégralité du code est également disponible a l'adresse suivante:
+La methode utilisée pour écrire le code ne permet pas d'afficher les accents et les lignes trop longues sont coupées, cependant l'intégralité du code est également disponible à l'adresse suivante:
 https://github.com/SolowinFXVI/Metrocesttrop
 
 \section{Explication des structures de données :}
   \paragraph{}
-  La premiere structure $SOMMET$ sert à stocker toutes les informations relative a un sommet/station (index du sommet,nom de la station, ligne de métro, status de terminus ou non).
+  La premiere structure $SOMMET$ sert à stocker toutes les informations relative à un sommet/station (index du sommet, nom de la station, ligne de métro, terminus ou non).
   Pour stocker ces informations on va utiliser des tableau de $char$ avec des tailles prédéfinies, cette technique consomme plus de mémoire que nécéssaire mais évite l'utilisation de $mallocs$.
   \paragraph{}
-  La seconde structure $TAB$ stock les informations relatives a tous les sommets/stations. C'est un tableau de la structure précédente.
+  La seconde structure $TAB$ stock les informations relatives à tous les sommets/stations. C'est un tableau de la structure précédente.
   \paragraph{}
-  La troisième structure $ARC$ contient les informations relatives a l'existence d'un arc c'est a dire un sommet de depart de type $sommet$, un sommet d'arrivée de type $sommet$ également, ainsi que le poids de cet arc ici défini par le temps de trajet entre ces deux sommets.
+  La troisième structure $ARC$ contient les informations relatives a l'existence d'un arc c'est a dire un sommet de depart de type $SOMMET$, un sommet d'arrivée de type $SOMMET$ également, ainsi que le poids de cet arc ici défini par le temps de trajet entre ces deux sommets.
   \paragraph{}
-  La quatrième structure $G$ est la matrice d'adjascence du graph elle est de type $ARC$ et contient par conséquent toutes les informations des structures précédentes.
+  La quatrième structure $G$ est la matrice d'adjascence du graph elle est de type $ARC$ et contient par conséquent toutes les informations des structures précédentes. On retrouve en abscisse et en ordonnées tous les sommets existants. Puisque notre graph est non orienté il faut faire en sorte que les arcs aillent dans les deux sens.
 
 \section{Principales procédures :}
   \paragraph{}
-  La principale procédure est la fonction $plus_court_chemin$ sans aucun doute mais c'est au coeur de cette fonction que se trouve la partie la plus importante du programme: la partie $dijkstra$.
-  Pour résoudre notre problème de plus court chemin nous avons décidé d'implémenter l'algorithme de dijkstra. Tout d'abord parce que c'est celui que nous avons vu en cours mais aussi parce que c'est un algorithme réputé.
+  La principale procédure est la fonction "plus court chemin" sans aucun doute mais c'est au coeur de cette fonction que se trouve la partie la plus importante du programme: la partie $dijkstra$.
+  Pour résoudre notre problème de plus court chemin nous avons décidé d'implémenter l'algorithme de $dijkstra$. Tout d'abord parce que c'est celui que nous avons vu en cours mais aussi parce que c'est un algorithme réputé.
   Il existe d'autres solutions au probleme du plus court chemin mais dijsktra semblait l'algorithme le plus adapté.
 
   Il serait intéréssant de savoir quel algorithme est utilisé par l'application de la sncf/ratp.Est-ce l'algorithme de dijkstra? Gourmand mais qui donne dans tous les cas le plus court chemin. Ou un algorithme de type A*, moins précis mais plus rapide?
-\section{Travail effectué :}
   \paragraph{}
-  Pour mener a bien ce projet il a fallut modifier grandement le fichier metro.txt, de facon a obtenir un formatage pratique à utiliser.
+  Une grosse partie du projet est basé sur l'utilisation des $string$ nous avons décidés de les utiliser tout le long pour simplifier les algorithmes cependant cela entraine l'appartion de très nombreuses petites conversions, d'où la grande quantitée de fonction $atoi$ (conversion d'un caractère ascii en int ex:"99999"->99999) et de $strcpy$ qui est une façon de remplir un tableau avec des string facilement (nous avions des problèmes avec le remplissage et cette fonction nous à grandement simplifiée la vie).
+  \paragraph{}
+  Il est parfois difficile de distinguer a quel moment utiliser les valeurs "NBR STATIONS" et "NBR ARCS" et cela peut porter a confusion mais le projet fonctionne et il n'y a pas d'érreurs de mémoire.
+  \paragraph{Déroulement simplifié du programme}
+  On commence avec les routines d'arguments, puis on va initialiser les sommets d'abord avec du "vide" ("UNKNOWN") pour nous aider en cas d'erreurs (si on peut lire unknown mais pas les données on sait d'où vient le problème). Ensuite on extrait les données relatives aux sommets depuis metro.txt.
+  On initilise ensuite la structure G, le graph, là encore on utilise la meme technique du remplissage avec du "vide", puis on remplie avec les données.
+  Enfin on arrive a plus court chemin, où on va appliquer dijkstra et où on va se servir d'une liste pour stocker les étapes du trajet.
+  Quand dijkstra est terminé on défait la liste et obtient le trajet complet. Une petite conversion du temps en minutes et voilà!
+  Tout au long du programme on peut apercevoir des $printf$ indiquants quelle fonction est utilisée elles permettent de savoir ce que le programme est en train de faire et ne gennent pas l'affichage du résultat.
+  \paragraph{}
+  Pour mener à bien ce projet il à fallut modifier grandement le fichier $metro.txt$, de façon à obtenir un formatage pratique à utiliser.
   Nous avons eu des difficultés avec la partie acquisition des donées et finalement le programme est fonctionnel mais sans affichage graphique.
+  \paragraph{Améliorations possibles}
+  Pour améliorer notre programme on pourrait y ajouter une touche graphique avec peut etre les coordonnées géographiques des stations sur une carte de Paris, mais le coeur du programme resterait inchangé.
+  On pourrait également avoir une base de données plus complète et pratique, malgré de nombreux changement du fichier $metro.txt$ (plus de 1000 operations manuelles) il reste incomplet et peut pratique en raison notamment des $string$,des apostrophes et des espaces(tous ces problèmes ont étés résolus en mettant des underscores à chacun d'eux).
+  On pourrait égelement ajouter au fichier $metro.txt$ les directions ce qui faciliterait la lisibilité pour l'utilisateur (meme si pour l'instant l'utilisateur a juste besoin de lire sur les panneaux dans la station jusqu'où il doit aller pour comprendre la direction).
 \newpage
 \lstset{
   language=C,               % choose the language of the code
@@ -89,8 +102,6 @@ https://github.com/SolowinFXVI/Metrocesttrop
   \lstinputlisting{../src/constantes.h}
   \newpage
   \lstinputlisting{../src/Makefile}
-
-
 
 
 \end{document}
