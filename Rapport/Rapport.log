@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.12.6)  5 MAY 2017 08:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2016.12.6)  5 MAY 2017 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -586,13 +586,24 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+Overfull \hbox (53.05916pt too wide) in paragraph at lines 24--26
+\T1/lmr/m/n/10 �ga-le-ment dis-po-nible a l'adresse sui-vante : https ://-gi-th
+ub.com/SolowinFXVI/Metrocesttrop 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 29.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 29.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 29.
+[1] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 50.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 75.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -624,7 +635,7 @@ Overfull \hbox (108.60352pt too wide) in paragraph at lines 34--35
 [][][][][][][][][][]  
  []
 
-[1]
+[2]
 
 ! Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -675,11 +686,11 @@ Overfull \hbox (414.78589pt too wide) in paragraph at lines 63--64
  []
 
 )
-Overfull \hbox (108.60352pt too wide) in paragraph at lines 68--50
+Overfull \hbox (108.60352pt too wide) in paragraph at lines 68--75
 [][][][][][][][][][]  
  []
 
-[2] (../src/mct.h) [3] (../src/lecture.c
+[3] (../src/mct.h) [4] (../src/lecture.c
 
 ! Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -726,33 +737,82 @@ Type  H <return>  for immediate help.
 l.50 ...ATIONS;i++){ //ignore ce qu'il y a après 
                                                   la derniere station
 ? 
-[4]
-Overfull \hbox (12.21277pt too wide) in paragraph at lines 66--67
+[5]
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63   //associe les données 
+                              stockées dans le tableau des sommets a la str...
+
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63   //associe les données 
+                              stockées dans le tableau des sommets a la str...
+
+? 
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63   //associe les données stockées 
+                                        dans le tableau des sommets a la str...
+
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.63   //associe les données stockées 
+                                        dans le tableau des sommets a la str...
+
+? 
+
+Overfull \hbox (12.21277pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (12.21277pt too wide) in paragraph at lines 68--69
+Overfull \hbox (12.21277pt too wide) in paragraph at lines 69--70
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (23.55286pt too wide) in paragraph at lines 69--70
+Overfull \hbox (23.55286pt too wide) in paragraph at lines 70--71
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (12.21277pt too wide) in paragraph at lines 72--73
+Overfull \hbox (12.21277pt too wide) in paragraph at lines 73--74
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (12.21277pt too wide) in paragraph at lines 74--75
+Overfull \hbox (12.21277pt too wide) in paragraph at lines 75--76
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (23.55286pt too wide) in paragraph at lines 75--76
+Overfull \hbox (23.55286pt too wide) in paragraph at lines 76--77
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -764,7 +824,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 ...NBR_ARCS], TAB M){ //extrait les données 
+l.81 ...NBR_ARCS], TAB M){ //extrait les données 
                                                   de "metro.txt" et les stoc...
 
 ? 
@@ -776,16 +836,20 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 ...NBR_ARCS], TAB M){ //extrait les données 
+l.81 ...NBR_ARCS], TAB M){ //extrait les données 
                                                   de "metro.txt" et les stoc...
 
 ? 
-[5]) [6] (../src/lecture.h) [7] (../src/dijkstra.c [8]
-Overfull \hbox (6.54272pt too wide) in paragraph at lines 74--75
-[][][][][][][][][][][][][][][][][][][][]  
+[6]) [7] (../src/lecture.h) [8] (../src/dijkstra.c [9]
+Overfull \hbox (51.90308pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[9]
+
+Overfull \hbox (108.60352pt too wide) in paragraph at lines 82--83
+[][][][][][][][][][]  
+ []
+
 
 ! Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -794,7 +858,34 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.115     printf("Vous etes deja arrivé.
+l.90 ...[i] == 0){//si le sommet n'est pas traité
+                                                  
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 ...[i] == 0){//si le sommet n'est pas traité
+                                                  
+? 
+[10]
+Overfull \hbox (108.60352pt too wide) in paragraph at lines 111--112
+[][][][][][][][][][]  
+ []
+
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.117     printf("Vous etes deja arrivé.
                                          ..");
 ? 
 
@@ -805,16 +896,105 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.115     printf("Vous etes deja arrivé.
+l.117     printf("Vous etes deja arrivé.
                                          ..");
 ? 
 
-Overfull \hbox (145.61365pt too wide) in paragraph at lines 139--141
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.121   int pere[NBR_ARCS]; //tableau utilisé 
+                                               par dijkstra
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.121   int pere[NBR_ARCS]; //tableau utilisé 
+                                               par dijkstra
+? 
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...t actuel est le pere du sommet d'arrivée
+                                                  
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.132 ...t actuel est le pere du sommet d'arrivée
+                                                  
+? 
+[11]
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...part][arrivee].temps); //incrémentation 
+                                                  du temps
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.137 ...part][arrivee].temps); //incrémentation 
+                                                  du temps
+? 
+
+Overfull \hbox (145.61365pt too wide) in paragraph at lines 144--145
 [][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-) [10] (../src/dijkstra.h) [11] (../src/structures.h) [12] (../src/constantes.h
-) [13] (../src/Makefile
+) [12] (../src/dijkstra.h) [13] (../src/structures.h
+
+! Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 ...2][472]; //Matrice d'adjascence utilisée 
+                                                  par la partie dijkstra
+? 
+
+! Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 ...2][472]; //Matrice d'adjascence utilisée 
+                                                  par la partie dijkstra
+? 
+) [14] (../src/constantes.h) [15] (../src/Makefile
 
 ! Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -859,24 +1039,27 @@ Type  H <return>  for immediate help.
 l.15 	./tes	Arts_et_Métiers	Galliéni
                                       
 ? 
-) [14] (./Rapport.aux) ) 
+) [16] (./Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 5358 strings out of 493013
- 68766 string characters out of 6135682
- 196719 words of memory out of 5000000
- 8824 multiletter control sequences out of 15000+600000
- 37045 words of font info for 34 fonts, out of 8000000 for 9000
+ 5384 strings out of 493013
+ 69051 string characters out of 6135682
+ 199673 words of memory out of 5000000
+ 8841 multiletter control sequences out of 15000+600000
+ 50826 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,49p,219b,1671s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/sh
-are/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt9.pfb>
-Output written on Rapport.pdf (15 pages, 179608 bytes).
+ 28i,6n,49p,309b,1671s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/sh
+are/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public
+/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmtt9.pfb>
+Output written on Rapport.pdf (17 pages, 226301 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 97 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

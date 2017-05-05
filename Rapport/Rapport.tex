@@ -20,8 +20,33 @@
   \newpage
   \pagenumbering{arabic}
 
-\section {Explication des structures de données}
+\paragraph{Note :}
+La methode utilisée pour écrire le code ne permet pas d'afficher les accents et les lignes trop longues sont coupées, cependant l'intégralité du code est également disponible a l'adresse suivante:
+https://github.com/SolowinFXVI/Metrocesttrop
 
+\section{Explication des structures de données :}
+  \paragraph{}
+  La premiere structure $SOMMET$ sert à stocker toutes les informations relative a un sommet/station (index du sommet,nom de la station, ligne de métro, status de terminus ou non).
+  Pour stocker ces informations on va utiliser des tableau de $char$ avec des tailles prédéfinies, cette technique consomme plus de mémoire que nécéssaire mais évite l'utilisation de $mallocs$.
+  \paragraph{}
+  La seconde structure $TAB$ stock les informations relatives a tous les sommets/stations. C'est un tableau de la structure précédente.
+  \paragraph{}
+  La troisième structure $ARC$ contient les informations relatives a l'existence d'un arc c'est a dire un sommet de depart de type $sommet$, un sommet d'arrivée de type $sommet$ également, ainsi que le poids de cet arc ici défini par le temps de trajet entre ces deux sommets.
+  \paragraph{}
+  La quatrième structure $G$ est la matrice d'adjascence du graph elle est de type $ARC$ et contient par conséquent toutes les informations des structures précédentes.
+
+\section{Principales procédures :}
+  \paragraph{}
+  La principale procédure est la fonction $plus_court_chemin$ sans aucun doute mais c'est au coeur de cette fonction que se trouve la partie la plus importante du programme: la partie $dijkstra$.
+  Pour résoudre notre problème de plus court chemin nous avons décidé d'implémenter l'algorithme de dijkstra. Tout d'abord parce que c'est celui que nous avons vu en cours mais aussi parce que c'est un algorithme réputé.
+  Il existe d'autres solutions au probleme du plus court chemin mais dijsktra semblait l'algorithme le plus adapté.
+
+  Il serait intéréssant de savoir quel algorithme est utilisé par l'application de la sncf/ratp.Est-ce l'algorithme de dijkstra? Gourmand mais qui donne dans tous les cas le plus court chemin. Ou un algorithme de type A*, moins précis mais plus rapide?
+\section{Travail effectué :}
+  \paragraph{}
+  Pour mener a bien ce projet il a fallut modifier grandement le fichier metro.txt, de facon a obtenir un formatage pratique à utiliser.
+  Nous avons eu des difficultés avec la partie acquisition des donées et finalement le programme est fonctionnel mais sans affichage graphique.
+\newpage
 \lstset{
   language=C,               % choose the language of the code
   aboveskip=3mm,

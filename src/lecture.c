@@ -14,7 +14,7 @@ TAB init_s(TAB M){ //remplie le tableau des sommet d'un marqueur "UNKNOWN"
   return M;
 }
 
-void init_g(ARC G[NBR_ARCS][NBR_ARCS]){
+void init_g(ARC G[NBR_ARCS][NBR_ARCS]){//remplie la structure G de marqueurs "UNKNOWN"
   int i;
   int j;
   for(i=0;i<NBR_ARCS;i++){
@@ -60,6 +60,7 @@ return M;
 }
 
 void associer_graph_data(char *sm1, char *sm2,ARC G[NBR_ARCS][NBR_ARCS],TAB M){
+  //associe les données stockées dans le tableau des sommets a la structure G
   int i;
   for(i=0;i<NBR_STATIONS;i++){
     if(atoi(sm1) == atoi(M.TAB[i].index)){
@@ -104,7 +105,7 @@ void initialiser_graph(char *str,ARC G[NBR_ARCS][NBR_ARCS], TAB M){ //extrait le
 fclose(fic);
 }
 
-void initialise_graph(char *str,ARC G[NBR_ARCS][NBR_ARCS],TAB M){
+void initialise_graph(char *str,ARC G[NBR_ARCS][NBR_ARCS],TAB M){ //fonction d'initialisation complete de la structure G
   printf("initialise_graph\n");
   init_g(G);
   initialiser_graph(str,G,M);

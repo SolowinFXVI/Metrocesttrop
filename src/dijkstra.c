@@ -79,6 +79,7 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){//Transforme le tabelau
 
   plus_courte_distance[sommet_depart] = 0;
 
+////////////////////////////////////////////////////////////////////////////////
   while(!sommets_tous_traites(sommets_traites)){
     printf("tours de while\n");
     //recherche du prochain sommet
@@ -86,8 +87,8 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){//Transforme le tabelau
 
     for(i=0; i<NBR_STATIONS; i++){//pour toutes les stations
 
-      if(sommets_traites[i] == 0){
-        if(plus_courte_distance[i] <= min){
+      if(sommets_traites[i] == 0){//si le sommet n'est pas traité
+        if(plus_courte_distance[i] <= min){//si la plus courte distance est inferieure au minimum actuel
           a_traiter = i;
           min=plus_courte_distance[i];
         }
@@ -96,47 +97,51 @@ void dijkstra(int pere[NBR_STATIONS], int sommet_depart){//Transforme le tabelau
 
     sommets_traites[a_traiter] = 1;
 
-    for(i=0; i<NBR_STATIONS;i++){
-      if(atoi(G[a_traiter][i].temps) != INFINI){
+    for(i=0; i<NBR_STATIONS;i++){//pour les successeurs du sommet a_traiter
+      if(atoi(G[a_traiter][i].temps) != INFINI){//test si la distance de ce sommet au sommet de depart est plus grande que celle passant par le sommet a_traiter
         if(plus_courte_distance[i] >= plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps)){
+          //mise a jour de la distance
           plus_courte_distance[i] = plus_courte_distance[a_traiter] + atoi(G[a_traiter][i].temps);
+          //donne le pere
           pere[i] = a_traiter;
         }
       }
     }
   }
+////////////////////////////////////////////////////////////////////////////////
 }
 
-void plus_court_chemin(ARC G[NBR_ARCS][NBR_ARCS],TAB M, int sommet_depart, int sommet_arrivee){
+void plus_court_chemin(ARC G[NBR_ARCS][NBR_ARCS],TAB M, int sommet_depart, int sommet_arrivee){//calcul le plus court chemin entre deux sommets
   printf(" plus_court_chemin\n");
   if(sommet_depart == sommet_arrivee){
     printf("Vous etes deja arrivé...");
     return ;
   }
 
-  int pere[NBR_ARCS];
-  List path = NULL;
+  int pere[NBR_ARCS]; //tableau utilisé par dijkstra
+  List path = NULL;//liste de stockage du plus court chemin
   int temps_total = 0;
 
-  dijkstra(pere,sommet_depart);
+  dijkstra(pere,sommet_depart); //COEUR DU PROGRAMME : modifie le tableau pere
 
   int depart, arrivee = sommet_arrivee;
 
-  path = fill_start(path,arrivee);
+  path = fill_start(path,arrivee);//remplissage du debut de la liste
 
   do {
-    depart = pere[arrivee];
+    depart = pere[arrivee]; //sommet de depart actuel est le pere du sommet d'arrivée
     if(depart == -1){
       printf("Pas de chemin possible entre %s et %s\n",M.TAB[sommet_depart].nom, M.TAB[sommet_arrivee].nom);
       return ;
     }
-    temps_total += atoi(G[depart][arrivee].temps);
-    path=fill_start(path,depart);
+    temps_total += atoi(G[depart][arrivee].temps); //incrémentation du temps
+    path=fill_start(path,depart);//remplissage de la liste
     arrivee=depart;
   }while(depart != sommet_depart);
   printf("\n");
-  print_list_path(path,M,G,temps_total);
+  print_list_path(path,M,G,temps_total);//affichage du trajet
   printf("\n");
   printf("temps de trajet : %d minutes et %d secondes\n",conversion_temps_min(temps_total),conversion_temps_sec(temps_total));
+  //affichage du temps de trajet
   printf("\n");
 }
